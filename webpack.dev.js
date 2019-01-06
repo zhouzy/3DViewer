@@ -11,9 +11,9 @@ module.exports = merge(common, {
     devtool: 'source-map',
     output: {
         // 文件输出目录
-        path: resolve('./app'),
+        path: resolve('./3DViewer'),
         // 资源加载路径
-        publicPath: '/SmartPolice/app/',
+        publicPath: '/SmartPolice/3DViewer/',
         // 输出的bundle文件名
         filename: '[name].js',
         // 输出的chunk文件名
