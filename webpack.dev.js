@@ -13,7 +13,7 @@ module.exports = merge(common, {
         // 文件输出目录
         path: resolve('./app'),
         // 资源加载路径
-        publicPath: '/app/',
+        publicPath: '/SmartPolice/app/',
         // 输出的bundle文件名
         filename: '[name].js',
         // 输出的chunk文件名
@@ -23,7 +23,7 @@ module.exports = merge(common, {
     devServer: {
         contentBase: resolve("./app"),
         inline:true,
-        publicPath: "/app",
+        publicPath: "/SmartPolice/app",
         open: false,
         index: '/index.html'
     },

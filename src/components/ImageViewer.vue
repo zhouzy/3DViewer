@@ -177,8 +177,8 @@
         width:30px;
         height:30px;
         display:inline-block;
-        background:url(../assets/camare.gif);
-        background-size:30px 30px;
+        background:url(../assets/camare.gif) no-repeat no-repeat;
+        background-size:contain;
         border-radius: 50%;
         transform: translate(-50%, -50%);
         position: absolute;
