@@ -191,6 +191,7 @@
         border-radius: 50%;
         transform: translate(-50%, -50%);
         position: absolute;
+        cursor:pointer;
     }
 
     .icon-camera span{
