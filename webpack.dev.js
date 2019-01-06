@@ -21,9 +21,9 @@ module.exports = merge(common, {
     },
 
     devServer: {
-        contentBase: resolve("./app"),
+        contentBase: resolve("./3DViewer"),
         inline:true,
-        publicPath: "/SmartPolice/app",
+        publicPath: "/SmartPolice/3DViewer",
         open: false,
         index: '/index.html'
     },

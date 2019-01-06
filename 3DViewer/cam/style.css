@@ -1,0 +1,138 @@
+
+/* to display text in front of the aframe canvas*/
+a-scene{
+  z-index: -1;
+}
+
+/**/
+
+body{
+    background-color: #000;
+    margin: 0px;
+	color: #fff;
+}
+
+a:link, a:hover, a:visited, a:active {
+    color: white;
+    text-decoration: none;
+}
+
+.container{
+    position:absolute;
+    width:100%;
+    display: flex;
+    justify-content: center;
+}
+
+.info{
+	position:absolute;
+    background-color: rgba(255, 255, 255, 0.5);
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 600px;
+    left:50%;
+    right:50%;
+}
+
+.info .company{
+    font-size: 2em;
+}
+
+.info .title{
+    font-size: 7em;
+    font-family: 'Poiret One', cursive;
+}
+
+.info .button{
+    font-weight: bold;
+    background-color: limegreen;
+    padding: 10px;
+    margin: 24px 0 0 0;
+}
+
+.info .instructions{
+    background-color: rgba(0, 0, 0, 0.1);
+    padding: 30px;
+    margin: 24px 0 0 0;
+}
+
+@media (max-width: 600px) {
+    .info {
+      width: 60%
+    }
+
+    .info .company{
+        font-size: 1em;
+    }
+
+    .info .title{
+      font-size: 3em;
+    }
+}
+.direction-panel{
+    position: relative;
+    height:90px;
+    width:90px;
+}
+
+.direction-panel__btn{
+    position: absolute;
+    width:30px;
+    height:30px;
+    text-align:center;
+    background-color:rgba(76,174,76,0.7);
+    cursor:pointer;
+}
+.direction-panel__btn:hover{
+    background-color:rgb(76,174,76);
+}
+.direction-panel__btn__up{
+    top:0;
+    left:30px;
+    border-radius: 15px 15px 0 0;
+}
+.direction-panel__btn__right{
+    right:0;
+    top:30px;
+    border-radius: 0 15px 15px 0;
+}
+.direction-panel__btn__down{
+    bottom:0;
+    left:30px;
+    border-radius: 0 0 15px 15px;
+}
+.direction-panel__btn__left{
+    left:0;
+    top:30px;
+    border-radius: 15px 0 0 15px;
+}
+.control-panel{
+    position:relative;
+    padding:0 90px;
+    height:90px;
+}
+.control-panel .direction-panel{
+    position:absolute;
+    left:0;
+    top:0;
+}
+.input-panel{
+    height:90px;
+    display:flex;
+    align-items: center;
+    justify-content: flex-start;
+}
+.input-panel .btn{
+    max-width:50px;
+    margin-left:15px;
+}
+.input-panel label{
+    min-width: 80px;
+    text-align:right;
+}
+.input-panel input{
+    max-width:140px;
+}

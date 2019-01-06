@@ -7,7 +7,9 @@
     >
         <div class="image-viewer__image-wrapper" :style="imgStyle">
             <img :src="imageUrl"/>
-            <span v-for="(camera,index) of cameraInfo" :key="index" class="icon-camera" :style="camera.iconStyle" @click="handlePlayVideo">camera-{{camera.id}}</span>
+            <span v-for="(camera,index) of cameraInfo" :key="index" class="icon-camera" :style="camera.iconStyle" @click="handlePlayVideo">
+                <span>camera-{{camera.id}}</span>
+            </span>
         </div>
     </div>
 </template>
@@ -114,8 +116,8 @@
                 });
             },
 
-            handlePlayVideo(id='51011552001310010438'){
-                window.open(`http://localhost:8200/${id}`);
+            handlePlayVideo(id){
+                window.open(`http://localhost:8200/51011552001310010438`);
             }
         },
 
@@ -129,9 +131,9 @@
                 handler(){
                     let allCameraInfo = [
                         [
-                            {id: "1-1", offsetX: 12, offsetY: 200},
-                            {id: "1-2", offsetX: 50, offsetY: 100},
-                            {id: "1-3", offsetX: 160, offsetY: 71}
+                            {id: "1-1", offsetX: 84, offsetY: 170},
+                            {id: "1-2", offsetX: 530, offsetY: 365},
+                            {id: "1-3", offsetX: 160, offsetY: 266}
                         ],[
                             {id: "2-1", offsetX: 12, offsetY: 200},
                             {id: "2-2", offsetX: 50, offsetY: 100},
@@ -188,4 +190,17 @@
         position: absolute;
     }
 
+    .icon-camera span{
+        display:inline-block;
+        height:20px;
+        background: #1b6d85;
+        color:#fff;
+        position:absolute;
+        bottom:-20px;
+        left:50%;
+        transform: translateX(-50%);
+        border-radius: 3px;
+        width:100px;
+        text-align:center;
+    }
 </style>
