@@ -7,7 +7,7 @@
     >
         <div class="image-viewer__image-wrapper" :style="imgStyle">
             <img :src="imageUrl"/>
-            <span v-for="(camera,index) of cameraInfo" :key="index" class="icon-camera" :style="camera.iconStyle">camera-{{camera.id}}</span>
+            <span v-for="(camera,index) of cameraInfo" :key="index" class="icon-camera" :style="camera.iconStyle" @click="handlePlayVideo">camera-{{camera.id}}</span>
         </div>
     </div>
 </template>
@@ -112,6 +112,10 @@
                     item.iconStyle = this.iconStyle(item);
                     return item;
                 });
+            },
+
+            handlePlayVideo(id='51011552001310010438'){
+                window.open(`http://localhost:8200/${id}`);
             }
         },
 
