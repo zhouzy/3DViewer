@@ -70,6 +70,5 @@
         top:0;
         bottom:0;
         width:100px;
-        background:rgba(220,220,220,0.8);
     }
 </style>

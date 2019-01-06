@@ -52,15 +52,15 @@
         margin: 0;
     }
     .nav-menu__item{
-        background: rgba(0,84,76,0.6);
+        background: rgba(0,84,76,0.8);
         display:block;
         height:35px;
         line-height:35px;
-        margin:0;
         padding-left:5px;
-        color: #1d1d1d;
+        color: #c1c1c1;
         cursor:pointer;
-        margin-bottom: 4px;
+        margin:0;
+        margin-bottom: 3px;
     }
 
     .nav-menu__item:hover{
