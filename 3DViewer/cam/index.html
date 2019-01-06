@@ -14,17 +14,17 @@
 <body>
 <div class="control-panel">
     <div class="direction-panel">
-        <button id="up"    class="direction-panel__btn direction-panel__btn__up">上</button>
+        <button id="up"    class="direction-panel__btn direction-panel__btn__up">前</button>
         <button id="right" class="direction-panel__btn direction-panel__btn__right">右</button>
-        <button id="down"  class="direction-panel__btn direction-panel__btn__down">下</button>
+        <button id="down"  class="direction-panel__btn direction-panel__btn__down">后</button>
         <button id="left"  class="direction-panel__btn direction-panel__btn__left">左</button>
     </div>
 
     <div class="input-panel">
-        <label class="control-label">定位摄像头</label>
-        <input id="ipt" type="text" autocomplete="off" placeholder="输入cam1或cam2(摄像头名)" class="form-control">
+        <!--<label class="control-label">定位摄像头</label>-->
+        <!--<input id="ipt" type="text" autocomplete="off" placeholder="输入cam1或cam2(摄像头名)" class="form-control">-->
         <label class="control-label">速度（倍）</label>
-        <input id="spd" type="text" autocomplete="off" value="1" class="form-control"/>
+        <input id="spd" type="text" autocomplete="off" value="30" class="form-control"/>
         <button id="btn" class="btn btn-sm btn-primary">提交</button>
     </div>
 </div>
@@ -127,6 +127,7 @@
             })
         }
     });
+
     //鼠标滚轮调整远近
     $("#scene").bind('mousewheel',function(event,delta){
         $("#camera").attr("position",function (n,v) {
@@ -135,9 +136,20 @@
             return b;
         })
     });
+
     //上
     $("#up").click(function () {
-        var newspeed=$("#spd").val()/10
+        var newspeed = $("#spd").val()/10;
+        $("#camera").attr("position",function (n,v) {
+            v.x -= newspeed;
+            var b=v.x+" "+v.y+" "+v.z;
+            return b;
+        })
+    });
+
+    //右
+    $("#right").click(function () {
+        var newspeed=$("#spd").val()/10;
         $("#camera").attr("position",function (n,v) {
             v.z-=newspeed;
             var b=v.x+" "+v.y+" "+v.z;
@@ -147,31 +159,24 @@
 
     //下
     $("#down").click(function () {
-        var newspeed=$("#spd").val()/10
-        $("#camera").attr("position",function (n,v) {
-            v.z+=newspeed;
-            var b=v.x+" "+v.y+" "+v.z;
-            return b;
-        })
-    });
-
-    //左
-    $("#left").click(function () {
-        var newspeed=$("#spd").val()/10
-        $("#camera").attr("position",function (n,v) {
-            v.x-=newspeed;
-            var b=v.x+" "+v.y+" "+v.z;
-            return b;
-        })
-    });
-    //右
-    $("#right").click(function () {
-        var newspeed=$("#spd").val()/10
+        var newspeed=$("#spd").val()/10;
         $("#camera").attr("position",function (n,v) {
             v.x+=newspeed;
             var b=v.x+" "+v.y+" "+v.z;
             return b;
         })
+
+    });
+
+    //左
+    $("#left").click(function () {
+        var newspeed=$("#spd").val()/10;
+        $("#camera").attr("position",function (n,v) {
+            v.z+=newspeed;
+            var b=v.x+" "+v.y+" "+v.z;
+            return b;
+        })
+
     });
 
     //切换德源派出所
@@ -202,21 +207,21 @@
         }
     }
 
-
     $(document).ready(function () {
         var this_place=get_param()
         switch(this_place){
             case "1":
-                console.log("url参数为1")
                 $("#building-2").attr({
                     "visible":false,
-                })
+                });
+
                 $("#building-1").attr("visible",true)
+
                 $("#camera").attr({
                         "position":"65.229 -3.5 3.875",
                         "rotation":"0 90 0"
                     }
-                )
+                );
                 break;
             case "2":
                 console.log("url参数为2")

@@ -7,8 +7,8 @@
     >
         <div class="image-viewer__image-wrapper" :style="imgStyle">
             <img :src="imageUrl"/>
-            <span v-for="(camera,index) of cameraInfo" :key="index" class="icon-camera" :style="camera.iconStyle" @click="handlePlayVideo">
-                <span>camera-{{camera.id}}</span>
+            <span v-for="(camera,index) of cameraInfo" :key="index" class="icon-camera" :style="camera.iconStyle" @click="handlePlayVideo(camera.id)">
+                <span>{{camera.id}}</span>
             </span>
         </div>
     </div>
@@ -117,7 +117,7 @@
             },
 
             handlePlayVideo(id){
-                window.open(`http://localhost:8200/51011552001310010438`);
+                document.createElement('img').setAttribute('src', `http://localhost:8200/${id}`);
             }
         },
 
@@ -131,22 +131,25 @@
                 handler(){
                     let allCameraInfo = [
                         [
-                            {id: "1-1", offsetX: 84, offsetY: 170},
-                            {id: "1-2", offsetX: 530, offsetY: 365},
-                            {id: "1-3", offsetX: 160, offsetY: 266}
+                            /*一楼*/
+                            {id: "51011552001310010438", offsetX: 103, offsetY: 206},
+                            {id: "51012482001310032444", offsetX: 204, offsetY: 365},
+                            {id: "51012482001310016863", offsetX: 600, offsetY: 451}
                         ],[
-                            {id: "2-1", offsetX: 12, offsetY: 200},
-                            {id: "2-2", offsetX: 50, offsetY: 100},
-                            {id: "2-3", offsetX: 160, offsetY: 71},
-                            {id: "2-4", offsetX: 120, offsetY: 88}
+                            /*二楼*/
+                            {id: "51011552001310010438", offsetX: 203, offsetY: 206},
+                            {id: "51012482001310032444", offsetX: 304, offsetY: 365},
+                            {id: "51012482001310016863", offsetX: 700, offsetY: 451}
                         ],[
-                            {id: "3-1", offsetX: 12, offsetY: 200},
-                            {id: "3-2", offsetX: 70, offsetY: 140},
-                            {id: "3-3", offsetX: 160, offsetY: 71}
+                            /*三楼*/
+                            {id: "51011552001310010438", offsetX: 303, offsetY: 206},
+                            {id: "51012482001310032444", offsetX: 704, offsetY: 365},
+                            {id: "51012482001310016863", offsetX: 300, offsetY: 451}
                         ],[
-                            {id: "4-1", offsetX: 12, offsetY: 200},
-                            {id: "4-2", offsetX: 100, offsetY: 140},
-                            {id: "4-3", offsetX: 160, offsetY: 71}
+                            /*四楼*/
+                            {id: "51011552001310010438", offsetX: 403, offsetY: 206},
+                            {id: "51012482001310032444", offsetX: 204, offsetY: 365},
+                            {id: "51012482001310016863", offsetX: 200, offsetY: 451}
                         ]
                     ];
 
@@ -193,6 +196,7 @@
     .icon-camera span{
         display:inline-block;
         height:20px;
+        line-height:20px;
         background: #1b6d85;
         color:#fff;
         position:absolute;
@@ -200,7 +204,8 @@
         left:50%;
         transform: translateX(-50%);
         border-radius: 3px;
-        width:100px;
+        min-width:130px;
+        padding:0 5px;
         text-align:center;
     }
 </style>

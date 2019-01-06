@@ -39,6 +39,7 @@
     html,body{
         margin:0;
         padding:0;
+        height:100%;
     }
 </style>
 <style>
@@ -46,8 +47,8 @@
         position: absolute;
         left:50%;
         top:50%;
-        width:800px;
-        height:600px;
+        width:1000px;
+        height:700px;
         border:1px solid #f2f2f2;
         transform: translate(-50%, -50%);
     }
